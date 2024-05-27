@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: DeliveryBackend
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/deliveryapp
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
