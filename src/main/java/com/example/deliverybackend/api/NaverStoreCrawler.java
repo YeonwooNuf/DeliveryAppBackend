@@ -183,7 +183,7 @@ public class NaverStoreCrawler {
                                 storeDao.setStoreName(storeName);
                                 storeDao.setStoreAddress(storeAddress);
                                 storeDao.setCategory(category);
-                                storeDao.setStoreImg(storeImg);
+                                storeDao.setStoreImg(productImageElement.get(0).getAttribute("src"));
                                 existingStore = storeRepository.save(storeDao);
                             }
 
