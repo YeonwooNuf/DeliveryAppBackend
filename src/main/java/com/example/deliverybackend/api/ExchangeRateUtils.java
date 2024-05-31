@@ -23,7 +23,7 @@ public class ExchangeRateUtils {
         HttpURLConnection connection = null;
 
         String authKey = "rDywxWYJn4fZuW5r8hCmDPX7HXy4CPwB";
-        String searchDate = "20240517";
+        String searchDate = "20240517";//DateFormat('yyyyMMdd').format(DateTime.now()); 현재 날짜임 나중에 님들이 직접 넣어서 ㄱㄱ
         String dataType = "AP01";
 
         try {
