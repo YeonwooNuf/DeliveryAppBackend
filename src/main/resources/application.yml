@@ -14,3 +14,7 @@ spring:
         dialect: org.hibernate.dialect.MySQL5Dialect
     hibernate:
       ddl-auto: update
+naver:
+    client:
+      id: kYo7M78Rs5rjMMCXAahR
+      secret: dwiH5kwh3X

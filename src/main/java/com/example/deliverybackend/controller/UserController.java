@@ -1,7 +1,7 @@
 package com.example.deliverybackend.controller;
 
-import com.example.deliverybackend.model.UserDao;
-import com.example.deliverybackend.model.UserDto;
+import com.example.deliverybackend.entity.UserDao;
+import com.example.deliverybackend.entity.UserDto;
 import com.example.deliverybackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
