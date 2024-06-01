@@ -1,31 +1,16 @@
 package com.example.deliverybackend.entity;
 
+public class MenuDto {
 
-import jakarta.persistence.*;
-
-import java.util.List;
-
-@Entity
-@Table(name = "menu")
-public class MenuDao {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
 
-    // storeId를 외래 키로 사용하여 StoreDao와 연결
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "store_id")
-    private StoreDao storeId; // StoreDao 객체를 참조하는 필드
+    private StoreDao storeId;
 
     private String productName;
+
     private int price;
+
     private String productImg;
-
-
-
-
-
 
     public Long getProductId() {
         return productId;
