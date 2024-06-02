@@ -15,8 +15,7 @@ public class MenuDao {
 
     // storeId를 외래 키로 사용하여 StoreDao와 연결
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "store_id")
-    private StoreDao storeId; // StoreDao 객체를 참조하는 필드
+    private StoreDao menu_storeId; // StoreDao 객체를 참조하는 필드
 
     private String productName;
     private int price;
@@ -35,12 +34,12 @@ public class MenuDao {
         this.productId = productId;
     }
 
-    public StoreDao getStoreId() {
-        return storeId;
+    public StoreDao getMenu_storeId() {
+        return menu_storeId;
     }
 
-    public void setStoreId(StoreDao storeId) {
-        this.storeId = storeId;
+    public void setMenu_storeId(StoreDao menu_storeId) {
+        this.menu_storeId = menu_storeId;
     }
 
     public String getProductName() {
@@ -65,5 +64,21 @@ public class MenuDao {
 
     public void setProductImg(String productImg) {
         this.productImg = productImg;
+    }
+
+
+
+
+    //LAZY로딩으로 인한 json 반환 오류 때문에 DAO에서 DTO 객체로 옮겨 담아서 전송
+    //DTO에 담는 메서드
+    public MenuDto toDto() {
+        MenuDto menuDto = new MenuDto();
+        menuDto.setProductId((this.getProductId()));
+        menuDto.setProductName(this.getProductName());
+        menuDto.setPrice(this.getPrice());
+        menuDto.setProductImg(this.getProductImg());
+        menuDto.setMenu_storeId(this.getMenu_storeId().getStoreId()); // StoreId만 가져오거나 필요에 따라 수정
+
+        return menuDto;
     }
 }

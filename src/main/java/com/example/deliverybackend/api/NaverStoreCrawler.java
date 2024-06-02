@@ -30,7 +30,7 @@ public class NaverStoreCrawler {
 
     private WebDriver driver;
 
-    public static final String category = "중식";
+    public static final String category = "햄버거";
     private static final String url = "https://map.naver.com/p/search/" + category;
 
     public void process() {
@@ -192,7 +192,7 @@ public class NaverStoreCrawler {
                             menuDao.setProductName(productName);
                             menuDao.setPrice(price);
                             menuDao.setProductImg(productImg);
-                            menuDao.setStoreId(existingStore); // 매장 정보 설정
+                            menuDao.setMenu_storeId(existingStore); // 매장 정보 설정
                             menuRepository.save(menuDao);
 
 

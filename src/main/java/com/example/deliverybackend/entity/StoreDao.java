@@ -20,7 +20,7 @@ public class StoreDao {
     private String storeImg;
 
     // StoreDao와 MenuDao 간의 일대다 양방향 관계를 설정
-    @OneToMany(mappedBy = "storeId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "menu_storeId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<MenuDao> menus;
 
 

@@ -4,7 +4,7 @@ public class MenuDto {
 
     private Long productId;
 
-    private StoreDao storeId;
+    private Long menu_storeId;
 
     private String productName;
 
@@ -20,12 +20,12 @@ public class MenuDto {
         this.productId = productId;
     }
 
-    public StoreDao getStoreId() {
-        return storeId;
+    public Long getMenu_storeId() {
+        return menu_storeId;
     }
 
-    public void setStoreId(StoreDao storeId) {
-        this.storeId = storeId;
+    public void setMenu_storeId(Long menu_storeId) {
+        this.menu_storeId = menu_storeId;
     }
 
     public String getProductName() {
@@ -51,4 +51,7 @@ public class MenuDto {
     public void setProductImg(String productImg) {
         this.productImg = productImg;
     }
+
+
+
 }
