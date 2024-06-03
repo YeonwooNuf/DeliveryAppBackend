@@ -30,7 +30,7 @@ public class NaverStoreCrawler {
 
     private WebDriver driver;
 
-    public static final String category = "햄버거";
+    public static final String category = "족발";//원하는 카테고리로 직접수정해서 코드 실행하면 됨.
     private static final String url = "https://map.naver.com/p/search/" + category;
 
     public void process() {
@@ -73,9 +73,9 @@ public class NaverStoreCrawler {
         driver.get(url);
 
         // 60초까지 기다려줌
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(190));
         //10개의 데이터중 받아올 수있는 데이터만 가져온다는 뜻^^
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             try {
                 // (2) 검색결과 iframe으로 frame을 바꾼다.
                 wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.cssSelector("iframe#searchIframe")));
