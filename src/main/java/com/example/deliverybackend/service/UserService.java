@@ -26,11 +26,7 @@ public class UserService {
         userRepository.save(userdao);
     }
 
-    public List<String> getAllUserIds() {
-        return userRepository.findAll().stream()
-                .map(UserDao::getUserId)
-                .collect(Collectors.toList());
-    }
+
 
     public List<UserDao> getAllUsers() {
         return userRepository.findAll();

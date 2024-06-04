@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 //클라이언트에서 받아서 DB에 저장
-@SpringBootApplication
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
