@@ -8,33 +8,47 @@ import jakarta.persistence.*;
 public class FavoriteDao {
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private UserDao favorite_userId;
+    private Long favoriteUserNumber;
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "storeId")
-    private StoreDao favorite_storeId;
+    private Long favoriteStoreId;
 
     private String favorite_storeImg;
-    private float rating;
+
+    private String favoriteStoreName;
+
+    public String getFavoriteStoreName() {
+        return favoriteStoreName;
+    }
+
+    public void setFavoriteStoreName(String favoriteStoreName) {
+        this.favoriteStoreName = favoriteStoreName;
+    }
+
+    private double rating;
 
     // Getters and Setters
-    public UserDao getFavorite_userId() {
-        return favorite_userId;
+
+    @Transient
+    private UserDao userDao;
+
+    @Transient
+    private StoreDao storeDao;
+
+    public Long getFavoriteUserNumber() {
+        return favoriteUserNumber;
     }
 
-    public void setFavorite_userId(UserDao favorite_userId) {
-        this.favorite_userId = favorite_userId;
+    public void setFavoriteUserNumber(Long favoriteUserNumber) {
+        this.favoriteUserNumber = favoriteUserNumber;
     }
 
-    public StoreDao getFavorite_storeId() {
-        return favorite_storeId;
+    public Long getFavoriteStoreId() {
+        return favoriteStoreId;
     }
 
-    public void setFavorite_storeId(StoreDao favorite_storeId) {
-        this.favorite_storeId = favorite_storeId;
+    public void setFavoriteStoreId(Long favoriteStoreId) {
+        this.favoriteStoreId = favoriteStoreId;
     }
 
     public String getFavorite_storeImg() {
@@ -45,11 +59,22 @@ public class FavoriteDao {
         this.favorite_storeImg = favorite_storeImg;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(double rating) {
         this.rating = rating;
+    }
+
+    @PostLoad
+    private void postLoad() {
+        // 필요 시 데이터 로딩 시점에 객체로 변환하는 로직 추가
+    }
+
+    // 직접 객체로 변환
+    public void loadUserAndStore(UserDao userDao, StoreDao storeDao) {
+        this.userDao = userDao;
+        this.storeDao = storeDao;
     }
 }

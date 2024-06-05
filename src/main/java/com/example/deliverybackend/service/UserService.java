@@ -18,6 +18,7 @@ public class UserService {
     public void saveUser(UserDto userDto) {
         // DTO에서 엔티티로 매핑하여 저장
         UserDao userdao = new UserDao();
+        userdao.setUserNumber(userDto.getUserNumber());
         userdao.setUserId(userDto.getUserId());
         userdao.setPassword(userDto.getPassword());
         userdao.setName(userDto.getName());

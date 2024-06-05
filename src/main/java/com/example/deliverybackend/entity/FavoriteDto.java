@@ -3,27 +3,46 @@ package com.example.deliverybackend.entity;
 
 
 public class FavoriteDto {
-    private UserDao favorite_userId;
+    private Long favoriteUserNumber;
 
-    private StoreDao favorite_storeId;
+    private Long favoriteStoreId;
 
     private String favorite_storeImg;
-    private float rating;
 
-    public UserDao getFavorite_userId() {
-        return favorite_userId;
+    private String favoriteStoreName;
+
+    public String getFavoriteStoreName() {
+        return favoriteStoreName;
     }
 
-    public void setFavorite_userId(UserDao favorite_userId) {
-        this.favorite_userId = favorite_userId;
+    public void setFavoriteStoreName(String favoriteStoreName) {
+        this.favoriteStoreName = favoriteStoreName;
     }
 
-    public StoreDao getFavorite_storeId() {
-        return favorite_storeId;
+    private double rating;
+
+//    public FavoriteDto(Long favorite_userNumber, Long favorite_storeId, String favorite_storeImg, double rating) {
+//        this.favorite_userNumber = favorite_userNumber;
+//        this.favorite_storeId = favorite_storeId;
+//        this.favorite_storeImg = favorite_storeImg;
+//        this.rating = rating;
+//    }
+
+
+    public Long getFavoriteUserNumber() {
+        return favoriteUserNumber;
     }
 
-    public void setFavorite_storeId(StoreDao favorite_storeId) {
-        this.favorite_storeId = favorite_storeId;
+    public void setFavoriteUserNumber(Long favoriteUserNumber) {
+        this.favoriteUserNumber = favoriteUserNumber;
+    }
+
+    public Long getFavoriteStoreId() {
+        return favoriteStoreId;
+    }
+
+    public void setFavoriteStoreId(Long favoriteStoreId) {
+        this.favoriteStoreId = favoriteStoreId;
     }
 
     public String getFavorite_storeImg() {
@@ -34,11 +53,13 @@ public class FavoriteDto {
         this.favorite_storeImg = favorite_storeImg;
     }
 
-    public float getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 }
+
+
