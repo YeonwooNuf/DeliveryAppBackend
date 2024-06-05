@@ -18,6 +18,7 @@ public class UserService {
     public void saveUser(UserDto userDto) {
         // DTO에서 엔티티로 매핑하여 저장
         UserDao userdao = new UserDao();
+        userdao.setUserNumber(userDto.getUserNumber());
         userdao.setUserId(userDto.getUserId());
         userdao.setPassword(userDto.getPassword());
         userdao.setName(userDto.getName());
@@ -26,11 +27,7 @@ public class UserService {
         userRepository.save(userdao);
     }
 
-    public List<String> getAllUserIds() {
-        return userRepository.findAll().stream()
-                .map(UserDao::getUserId)
-                .collect(Collectors.toList());
-    }
+
 
     public List<UserDao> getAllUsers() {
         return userRepository.findAll();

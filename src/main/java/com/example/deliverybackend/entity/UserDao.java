@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
-@AllArgsConstructor
 public class UserDao {
 
     @Id
@@ -78,4 +77,15 @@ public class UserDao {
     public void setEmail(String email) {
         this.email = email;
     }
+    public UserDao(Long userNumber, String userId, String password, String name, String phone, String email) {
+        this.userNumber = userNumber;
+        this.userId = userId;
+        this.password = password;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+    }
+
+
+
 }

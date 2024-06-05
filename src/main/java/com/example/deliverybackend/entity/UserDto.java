@@ -3,12 +3,20 @@ package com.example.deliverybackend.entity;
 
 
 public class UserDto {
+    private Long userNumber;
     private String userId;
     private String password;
     private String name;
     private String phone;
     private String email;
 
+    public Long getUserNumber() {
+        return userNumber;
+    }
+
+    public void setUserNumber(Long userNumber) {
+        this.userNumber = userNumber;
+    }
 
     public String getUserId() {
         return userId;
