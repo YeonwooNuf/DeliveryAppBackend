@@ -17,4 +17,8 @@ public class StoreService {
     public List<StoreDao> getAllStores(){
         return storeRepository.findAll();
     };
+
+    public StoreDao getStoreById(Long storeId) {
+        return storeRepository.findById(storeId).orElse(null);
+    }
 }
