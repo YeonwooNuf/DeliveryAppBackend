@@ -21,13 +21,6 @@ public class FavoriteDto {
 
     private double rating;
 
-//    public FavoriteDto(Long favorite_userNumber, Long favorite_storeId, String favorite_storeImg, double rating) {
-//        this.favorite_userNumber = favorite_userNumber;
-//        this.favorite_storeId = favorite_storeId;
-//        this.favorite_storeImg = favorite_storeImg;
-//        this.rating = rating;
-//    }
-
 
     public Long getFavoriteUserNumber() {
         return favoriteUserNumber;

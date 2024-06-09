@@ -28,6 +28,14 @@ public class UserService {
     }
 
 
+    public UserDao findById(Long userNumber) {
+        return userRepository.findById(userNumber)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
+
+
+
 
     public List<UserDao> getAllUsers() {
         return userRepository.findAll();
