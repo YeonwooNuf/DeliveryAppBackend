@@ -30,6 +30,10 @@ public class UserDao {
     @Column(name = "email")
     private String email;
 
+    public UserDao(Long userNumber) {
+        this.userNumber = userNumber;
+    }
+
     public Long getUserNumber() {
         return userNumber;
     }
@@ -77,6 +81,7 @@ public class UserDao {
     public void setEmail(String email) {
         this.email = email;
     }
+
 
 
 

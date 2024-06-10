@@ -17,6 +17,14 @@ public class FavoriteDao {
 
     private String favoriteStoreName;
 
+    private double rating;
+
+    @Transient
+    private UserDao userDao;
+
+    @Transient
+    private StoreDao storeDao;
+
     public String getFavoriteStoreName() {
         return favoriteStoreName;
     }
@@ -24,16 +32,6 @@ public class FavoriteDao {
     public void setFavoriteStoreName(String favoriteStoreName) {
         this.favoriteStoreName = favoriteStoreName;
     }
-
-    private double rating;
-
-    // Getters and Setters
-
-    @Transient
-    private UserDao userDao;
-
-    @Transient
-    private StoreDao storeDao;
 
     public Long getFavoriteUserNumber() {
         return favoriteUserNumber;
