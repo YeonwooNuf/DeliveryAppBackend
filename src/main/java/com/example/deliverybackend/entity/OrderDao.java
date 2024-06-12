@@ -18,6 +18,12 @@ public class OrderDao {
     @CreationTimestamp
     private LocalDateTime orderTime;
 
+    @Transient
+    private UserDao userDao;
+
+    @Transient
+    private StoreDao storeDao;
+
     public OrderDao() {
         // 기본 생성자
     }
@@ -86,6 +92,11 @@ public class OrderDao {
 
     public void setOrderTime(LocalDateTime orderTime) {
         this.orderTime = orderTime;
+    }
+
+    public void loadUserAndStore(UserDao userDao, StoreDao storeDao) {
+        this.userDao = userDao;
+        this.storeDao = storeDao;
     }
 
 }
