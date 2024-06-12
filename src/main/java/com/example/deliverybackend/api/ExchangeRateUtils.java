@@ -10,6 +10,12 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static com.fasterxml.jackson.databind.type.LogicalType.DateTime;
+
 //환율 openAPI 받아오는 코드
 @SpringBootApplication
 public class ExchangeRateUtils {
@@ -23,7 +29,8 @@ public class ExchangeRateUtils {
         HttpURLConnection connection = null;
 
         String authKey = "rDywxWYJn4fZuW5r8hCmDPX7HXy4CPwB";
-        String searchDate = "20240517";//DateFormat('yyyyMMdd').format(DateTime.now()); 현재 날짜임 나중에 님들이 직접 넣어서 ㄱㄱ
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        String searchDate = sdf.format(new Date()); // 현재 날짜를 "yyyyMMdd" 
         String dataType = "AP01";
 
         try {

@@ -18,6 +18,18 @@ public class HomeAddressDao {
 
     private String address;
     private String addressCategory;
+    private boolean addressSelect = false;
+
+
+
+
+    public boolean isAddressSelect() {
+        return addressSelect;
+    }
+
+    public void setAddressSelect(boolean addressSelect) {
+        this.addressSelect = addressSelect;
+    }
 
     @Transient
     private UserDao userDao;
