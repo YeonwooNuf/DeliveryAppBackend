@@ -22,8 +22,8 @@ public class ExchangeRateUtils {
         StringBuilder responseContent = new StringBuilder();
         HttpURLConnection connection = null;
 
-        String authKey = "rDywxWYJn4fZuW5r8hCmDPX7HXy4CPwB";
-        String searchDate = "20240517";//DateFormat('yyyyMMdd').format(DateTime.now()); 현재 날짜임 나중에 님들이 직접 넣어서 ㄱㄱ
+        String authKey = "n2UxfRnKCno2qmgUFQDofsMANHORimVD";
+        String searchDate = "20240829";//DateFormat('yyyyMMdd').format(DateTime.now()); 현재 날짜임 나중에 님들이 직접 넣어서 ㄱㄱ
         String dataType = "AP01";
 
         try {
