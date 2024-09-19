@@ -12,6 +12,26 @@ public class HomeAddressDto {
     private String address;
 
     private String addressCategory;
+    private boolean addressSelect ;
+
+    @Override
+    public String toString() {
+        return "HomeAddressDto{" +
+                "HomeAddressNumber=" + HomeAddressNumber +
+                ", addressUserNumber=" + addressUserNumber +
+                ", address='" + address + '\'' +
+                ", addressCategory='" + addressCategory + '\'' +
+                ", addressSelect=" + addressSelect +
+                '}';
+    }
+
+    public boolean isAddressSelect() {
+        return addressSelect;
+    }
+
+    public void setAddressSelect(boolean addressSelect) {
+        this.addressSelect = addressSelect;
+    }
 
     public Long getHomeAddressNumber() {
         return HomeAddressNumber;
